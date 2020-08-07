@@ -1,7 +1,12 @@
 def get_indices_of_item_weights(weights, length, limit):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    dataset = {}
+
+    for weight in range(len(weights)):
+        target = limit - weights[weight]
+        if target in dataset:
+            result = (weight, dataset[target])
+            return result
+        else:
+            dataset[weights[weight]] = weight
 
     return None
